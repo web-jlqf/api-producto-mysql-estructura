@@ -4,8 +4,8 @@ import mysql.connector
 def get_connection():
     # Ajusta estos datos a tu entorno
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="tu_password",
-        database="academia_db"
+        host="127.0.0.1",
+        user="web",
+        password="web123456",
+        database="web-dbase"
     )
