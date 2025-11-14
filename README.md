@@ -13,23 +13,23 @@ Se conecta a una base de datos MySQL, pero evita ORMs y programación declarativ
 
 - **main.py**: Punto de entrada de la aplicación. Inicializa FastAPI y monta los routers.
 - **db.py**: Configura la conexión a la base de datos.
-- **models/**: Contiene los modelos que interactúan directamente con la base de datos.
-    - product_model.py
-- **services/**: Implementa la lógica de negocio, separando responsabilidades del controlador.
-    - product_service.py
 - **routers/**: Define los endpoints HTTP que exponen la funcionalidad de la API.
     - product_router.py
-
-
-## Routers (Controladores HTTP)
+- **services/**: Implementa la lógica de negocio, separando responsabilidades del controlador.
+    - product_service.py
+- **models/**: Contiene los modelos que interactúan directamente con la base de datos.
+    - product_model.py
+      
+## Routers (Controladores / Vistas HTTP)
 
 Responsabilidades:
 
-- Definen las rutas y métodos HTTP.
-- Reciben datos del cliente.
+- Definir endpoints (GET, POST, DELETE, etc.)..
+- Recibir solicitudes HTTP (req).
+- Devolver respuestas HTTP (res) con códigos apropiados.
+- Validar el formato de entrada (Pydantic mínimo).
 - Llaman a los servicios.
 - No contienen lógica de negocio.
-- Devuelven respuestas HTTP y códigos de estado.
 
 ```python
 @router.post("/", status_code=201)
